@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -9,69 +10,72 @@
 
     <title></title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 </head>
 
 <body>
     <div class="container-fluid">
-    <form id="sex">
-        <div class="form-check col-1 form-check-inline">
-            <input type="radio" class="form-check-input" name="sex" value="male" id="male" checked>
-            <label class="form-check-label" for="male">Male</label>
-        </div>
-        <div class="form-check col-1 form-check-inline">
-            <input type="radio" class="form-check-input" name="sex" value="female" id="female">
-            <label class="form-check-label" for="female">Female</label>
-        </div>
-        <div class="form-group row">
-            <label for="height" class="col-1 col-form-label">Height</label>
-            <div class="col-1">
-                <input type="text" name="height" id="height" class="form-control">
+        <form id="sex">
+            <div class="form-check col-1 form-check-inline">
+                <input type="radio" class="form-check-input" name="sex" value="male" id="male" checked>
+                <label class="form-check-label" for="male">Male</label>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="weight" class="col-1 col-form-label">Weight</label>
-            <div class="col-1">
-                <input type="text" name="weight" id="weight" class="form-control">
+            <div class="form-check col-1 form-check-inline">
+                <input type="radio" class="form-check-input" name="sex" value="female" id="female">
+                <label class="form-check-label" for="female">Female</label>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="neck" class="col-1 col-form-label">Neck</label>
-            <div class="col-1">
-                <input type="text" name="neck" id="neck" class="form-control">
+            <div class="form-group row">
+                <label for="height" class="col-1 col-form-label">Height</label>
+                <div class="col-1">
+                    <input type="text" name="height" id="height" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="waist" class="col-1 col-form-label">Waist</label>
-            <div class="col-1">
-                <input type="text" name="waist" id="waist" class="form-control">
+            <div class="form-group row">
+                <label for="weight" class="col-1 col-form-label">Weight</label>
+                <div class="col-1">
+                    <input type="text" name="weight" id="weight" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="hip" class="col-1 col-form-label">Hip</label>
-            <div class="col-1">
-                <input type="text" name="hip" id="hip" class="form-control">
+            <div class="form-group row">
+                <label for="neck" class="col-1 col-form-label">Neck</label>
+                <div class="col-1">
+                    <input type="text" name="neck" id="neck" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="desired-bodyfat" class="col-1 col-form-label">Desired Bodyfat</label>
-            <div class="col-1">
-                <input type="text" name="desired-bodyfat" id="desired-bodyfat" class="form-control">
+            <div class="form-group row">
+                <label for="waist" class="col-1 col-form-label">Waist</label>
+                <div class="col-1">
+                    <input type="text" name="waist" id="waist" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class=" control-label">
-            Body Fat: <span id="bodyfat"></span><br />
-            Lean mass: <span id="lean-mass"></span><br />
-            Fat mass: <span id="fat-mass"></span><br />
-            Weight at desired bodyfat: <span id="weight-at-desired-bodyfat"></span>
-        </div>
-    </form>
+            <div class="form-group row">
+                <label for="hip" class="col-1 col-form-label">Hip</label>
+                <div class="col-1">
+                    <input type="text" name="hip" id="hip" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="desired-bodyfat" class="col-1 col-form-label">Desired Bodyfat</label>
+                <div class="col-1">
+                    <input type="text" name="desired-bodyfat" id="desired-bodyfat" class="form-control">
+                </div>
+            </div>
+            <div class=" control-label">
+                Body Fat: <span id="bodyfat"></span><br />
+                Lean mass: <span id="lean-mass"></span><br />
+                Fat mass: <span id="fat-mass"></span><br />
+                Weight at desired bodyfat: <span id="weight-at-desired-bodyfat"></span><br />
+                Total Daily Energy Expenditure: <span id="tdee"></span><br />
+                Calories to eat per day to lose ~1lb fat per week (nearest 100): <span
+                    id="cals-per-day-fat-loss"></span><br />
+            </div>
+        </form>
     </div>
 </body>
 
 <script>
-
     document.getElementById("sex").onchange = handleChange;
     document.getElementById("height").onchange = handleChange;
     document.getElementById("weight").onchange = handleChange;
@@ -88,30 +92,33 @@
         hip = parseFloat(document.getElementById("hip").value);
         desiredBodyfat = parseFloat(document.getElementById("desired-bodyfat").value);
         bodyfat = calcBf(sex, height, neck, waist, hip).toFixed(1);
-        fatMass = (weight*bodyfat/100).toFixed(1);
-        leanMass = (weight-fatMass).toFixed(1);
-        goalWeight = (leanMass/(1-(desiredBodyfat/100))).toFixed(1);
+        fatMass = (weight * bodyfat / 100).toFixed(1);
+        leanMass = (weight - fatMass).toFixed(1);
+        goalWeight = (leanMass / (1 - (desiredBodyfat / 100))).toFixed(1);
         document.getElementById("bodyfat").innerHTML = bodyfat;
         document.getElementById("lean-mass").innerHTML = leanMass;
         document.getElementById("fat-mass").innerHTML = fatMass;
         document.getElementById("weight-at-desired-bodyfat").innerHTML = goalWeight;
+        // Katch-McArdle
+        bmr = 370 + (21.6 * leanMass) - leanMass;
+        // Most people have an activity modifier of 1.2
+        tdee = (bmr * 1.2).toFixed(0);
+        document.getElementById("tdee").innerHTML = tdee;
+        calsForFatLoss = Math.round(tdee / 100) * 100 - 500;
+        document.getElementById("cals-per-day-fat-loss").innerHTML = calsForFatLoss;
     }
-
-
-
 
     function calcBf(sex, height, neck, waist, hip) {
         if (sex !== "male" && sex !== "female") {
             return -1;
         }
         if (sex === "male") {
-            return (495/(1.0324-0.19077*Math.log10(waist-neck)+0.15456*Math.log10(height))-450);
+            return (495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450);
         }
         if (sex === "female") {
-            return (495/(1.29579-0.35004*Math.log10(waist+hip-neck)+0.22100*Math.log10(height))-450);
+            return (495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450);
         }
     }
-
 </script>
 
 </html>
